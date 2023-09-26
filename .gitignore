@@ -1,0 +1,6 @@
+/node_modules
+/.env
+/package-lock.json
+
+/digitax-frontend/node_modules
+/digitax-frontend/package-lock.json
