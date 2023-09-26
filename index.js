@@ -22,9 +22,9 @@ app.use("/api/v1",require('./routes/iossText'))
 app.use("/api/v1",require('./routes/iossImage'))
 
 app.use('/images',express.static('./images'))
-app.use(express.static(path.join(__dirname,'./frontend/dist')))
+app.use(express.static(path.join(__dirname,'./digitax-frontend/dist')))
 app.get('*',function(_,res){
-    res.sendFile(path.join(__dirname,'./frontend/dist/index.html'),function(e){
+    res.sendFile(path.join(__dirname,'./digitax-frontend/dist/index.html'),function(e){
         res.status(500).send(e)
         console.log(e,"index.html file not found")
     })
