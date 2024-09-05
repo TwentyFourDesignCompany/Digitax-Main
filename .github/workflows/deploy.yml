@@ -29,10 +29,10 @@ jobs:
         echo "build_time=$(date +'%Y%m%d-%s')" >> $GITHUB_OUTPUT
 
     - name: Configure AWS credentials
-      uses: aws-actions/configure-aws-credentials@v1.7.0
+      uses: aws-actions/configure-aws-credentials@v1
       with:
-        role-to-assume: arn:aws:iam::917117785041:role/digitax-role
-        role-session-name: digitax-role
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-1
 
     - name: Cache node modules
