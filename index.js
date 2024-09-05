@@ -30,6 +30,9 @@ app.get('*',function(_,res){
     })
 })
 
-
+// Health check endpoint
+app.get('/health', (req, res) => {
+    res.status(200).json({ status: 'OK', message: 'Service is healthy' });
+});
 
 app.listen(port,()=>console.log(`server is running on port ${port}`))
