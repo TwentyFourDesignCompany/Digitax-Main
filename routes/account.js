@@ -22,7 +22,7 @@ router.post("/register",async(req,res)=>{
 
 router.post("/login",async(req,res)=>{
     let {email,password} = req.body
-    let find = await adminAccount.findOne({adminEmail:email})
+    const find = await adminAccount.findOne({ adminEmail: new RegExp(`^${email}$`, 'i') }).exec();
     if (find){
         let compare = await bcrypt.compare(password,find.password)
         if (compare){
